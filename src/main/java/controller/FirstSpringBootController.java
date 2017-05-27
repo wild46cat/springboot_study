@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 import pojo.Student;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/test")
@@ -33,5 +35,20 @@ public class FirstSpringBootController {
         return studentList;
     }
 
+    @RequestMapping(value = "/greeting4")
+    public List<Map<String,String>> greeting4(){
+        Map<String,String> map = new HashMap<>();
+        map.put("name","xiaoxiao");
+        map.put("id","12");
+        Map<String,String> map2 = new HashMap<>();
+        map2.put("name","xxxx");
+        map2.put("id","16");
+        List<Map<String,String>> mapList = new ArrayList<>();
+        mapList.add(map);
+        mapList.add(map2);
+
+        return mapList;
+
+    }
 }
 
