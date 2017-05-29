@@ -12,10 +12,11 @@ import java.util.Date;
 public class ScheduleTask {
     private static final Logger LOGGER = LoggerFactory.getLogger(ScheduleTask.class);
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+    private static final long INTERVALTIME = 3000L;
 
-    @Scheduled(fixedRate = 5000)
-    public void reportCurrentTime() {
-        LOGGER.info("now time is {}", dateFormat.format(new Date()));
-    }
+//    @Scheduled(fixedRate = INTERVALTIME)
+//    public void reportCurrentTime() {
+//        LOGGER.info("now time is {}", dateFormat.format(new Date()));
+//    }
 
 }

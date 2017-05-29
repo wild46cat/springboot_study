@@ -19,7 +19,7 @@ public class FirstSpringBootController {
         return "sagddf";
     }
 
-    @RequestMapping(value = "/greeting2", method = {RequestMethod.GET})
+    @RequestMapping(value = "/greeting2", method = {RequestMethod.POST})
     public Student greeting2(int id,String name) {
         Student student = new Student(id, name);
         return student;
