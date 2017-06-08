@@ -2,11 +2,10 @@ package jdbc;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import sun.tools.tree.ThisExpression;
 
 import java.beans.PropertyVetoException;
+import java.util.ResourceBundle;
 
 /**
  * Created by wuxueyou on 2017/6/2.

@@ -15,6 +15,7 @@
         <springboot.version>1.5.3.RELEASE</springboot.version>
     </properties>
 
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
