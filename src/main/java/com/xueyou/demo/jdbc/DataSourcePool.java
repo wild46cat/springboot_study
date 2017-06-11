@@ -1,11 +1,13 @@
-package jdbc;
+package com.xueyou.demo.jdbc;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.xueyou.demo.App;
+import com.xueyou.demo.AppConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.beans.PropertyVetoException;
-import java.util.ResourceBundle;
 
 /**
  * Created by wuxueyou on 2017/6/2.
@@ -13,24 +15,21 @@ import java.util.ResourceBundle;
 @Component
 public class DataSourcePool {
 
+    @Autowired
+    AppConfig appConfig;
+
     private ComboPooledDataSource comboPooledDataSource;
-    @Value("${jdbc.url}")
+
     private String url;
 
-    @Value("${jdbc.driverClassName}")
     private String driverClassName;
 
-    @Value("${jdbc.username}")
     private String user;
 
-    @Value("${jdbc.password}")
     private String password;
 
-    @Value("${jdbc.maxPoolSize}")
     private int maxPoolSize;
 
-
-    @Value("${jdbc.maxIdleTime}")
     private int maxIdleTime;
 
     public ComboPooledDataSource getDataSource() {
@@ -38,6 +37,7 @@ public class DataSourcePool {
             return comboPooledDataSource;
         }
         try {
+            setConfigFromAppConfig();
             comboPooledDataSource = new ComboPooledDataSource();
             comboPooledDataSource.setJdbcUrl(url);
             comboPooledDataSource.setDriverClass(driverClassName);
@@ -50,5 +50,14 @@ public class DataSourcePool {
         } finally {
         }
         return comboPooledDataSource;
+    }
+
+    private void setConfigFromAppConfig() {
+        this.url = appConfig.getUrl();
+        this.driverClassName = appConfig.getDriverClassName();
+        this.user = appConfig.getUser();
+        this.password = appConfig.getPassword();
+        this.maxIdleTime = appConfig.getMaxIdleTime();
+        this.maxPoolSize = appConfig.getMaxPoolSize();
     }
 }

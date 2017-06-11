@@ -1,9 +1,9 @@
-package controller;
+package com.xueyou.demo.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import pojo.Student;
+import com.xueyou.demo.pojo.Student;
 
 import java.util.ArrayList;
 import java.util.HashMap;

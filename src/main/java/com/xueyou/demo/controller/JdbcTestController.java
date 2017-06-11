@@ -1,6 +1,6 @@
-package controller;
+package com.xueyou.demo.controller;
 
-import jdbc.DataSourcePool;
+import com.xueyou.demo.jdbc.DataSourcePool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,15 +33,16 @@ public class JdbcTestController {
     }
 
     @RequestMapping("/jdbcTemplateTest")
-    public String testJdbcTemplate(){
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSourceConf.getDataSource());
-        List<Map<String,Object>> list = jdbcTemplate.queryForList("select * from student");
-        for (Map<String, Object> stringObjectMap : list) {
-            System.out.println(stringObjectMap.keySet());
-            for (String s : stringObjectMap.keySet()) {
-                System.out.println(stringObjectMap.get(s));
-            }
+    public List<Map<String, Object>> testJdbcTemplate() {
+        JdbcTemplate jdbcTemplate = null;
+        List<Map<String, Object>> list = null;
+        try {
+            jdbcTemplate = new JdbcTemplate(dataSourceConf.getDataSource());
+            list = jdbcTemplate.queryForList("select * from student");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
         }
-        return "ok";
+        return list;
     }
 }

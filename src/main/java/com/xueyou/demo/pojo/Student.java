@@ -1,4 +1,4 @@
-package pojo;
+package com.xueyou.demo.pojo;
 
 /**
  * Created by wuxueyou on 2017/5/26.
