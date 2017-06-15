@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -34,7 +35,14 @@ public class mybatisTestController {
 
     @RequestMapping("/getByIdAndName")
     public Student getByIdAndName(int id,String name){
-        return studentDao.getByIdAndName(id,name);
+        return studentDao.getByIdAndName(new Student(id,name));
     }
 
+    @RequestMapping("/getByIdAndNameWithParamMap")
+    public Student getByIdAndNameWithParamMap(int id,String name){
+        HashMap<String,Object> param = new HashMap<>();
+        param.put("id",id);
+        param.put("name",name);
+        return studentDao.getByIdAndNameWithParamMap(param);
+    }
 }

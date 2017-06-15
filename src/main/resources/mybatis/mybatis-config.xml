@@ -11,5 +11,7 @@
         <typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap" />
         <typeAlias alias="ArrayList" type="java.util.ArrayList" />
         <typeAlias alias="LinkedList" type="java.util.LinkedList" />
+        <!--pojo-->
+        <typeAlias alias="student" type="com.xueyou.demo.pojo.Student" />
     </typeAliases>
 </configuration>

@@ -2,6 +2,7 @@ package com.xueyou.demo.dao;
 
 import com.xueyou.demo.pojo.Student;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -14,5 +15,8 @@ public interface StudentDao {
 
     List<Student> getByNameLike(String name);
 
-    Student getByIdAndName(int id,String name);
+    Student getByIdAndName(Student student);
+
+    Student getByIdAndNameWithParamMap(HashMap<String,Object> params);
+
 }

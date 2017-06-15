@@ -16,6 +16,10 @@
     </select>
 
     <select id="getByIdAndName" resultType="com.xueyou.demo.pojo.Student" parameterType="com.xueyou.demo.pojo.Student">
-         SELECT * from test.student WHERE id = #{id} AND  name = #{name}
+         SELECT * from test.student WHERE id = #{id} AND name = #{name}
+    </select>
+
+    <select id="getByIdAndNameWithParamMap" resultType="com.xueyou.demo.pojo.Student" parameterType="HashMap">
+        SELECT * from test.student WHERE id = #{id} AND name = #{name}
     </select>
 </mapper>
