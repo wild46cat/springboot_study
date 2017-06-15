@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xueyou.demo.dao.StudentDao">
+    <select id="getAll" resultType="com.xueyou.demo.pojo.Student">
+        select * from test.student;
+    </select>
+
+    <select id="getById" resultType="com.xueyou.demo.pojo.Student">
+        SELECT * from test.student WHERE id = #{id};
+    </select>
+
+    <select id="getByNameLike" resultType="com.xueyou.demo.pojo.Student">
+        SELECT * from test.student WHERE name LIKE CONCAT('%',#{name},'%')
+    </select>
+
+    <select id="getByIdAndName" resultType="com.xueyou.demo.pojo.Student" parameterType="com.xueyou.demo.pojo.Student">
+         SELECT * from test.student WHERE id = #{id} AND  name = #{name}
+    </select>
+</mapper>

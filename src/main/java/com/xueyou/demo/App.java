@@ -1,5 +1,6 @@
 package com.xueyou.demo;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,6 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan(basePackages = {"com.xueyou.demo"})
 @EnableScheduling
 @PropertySource(value = {"classpath:jdbc-dev.properties"})
+@MapperScan(basePackages = {"com.xueyou.demo.dao"})
 //@PropertySource(value = {"classpath:jdbc-test.properties"})
 public class App {
 
