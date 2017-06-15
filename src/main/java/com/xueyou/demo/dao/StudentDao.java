@@ -2,6 +2,7 @@ package com.xueyou.demo.dao;
 
 import com.xueyou.demo.pojo.Student;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,4 +20,9 @@ public interface StudentDao {
 
     Student getByIdAndNameWithParamMap(HashMap<String,Object> params);
 
+    List<Student> getByCreateTime(Date date);
+
+    int insertStudent(Student student);
+
+    int deleteById(Student student);
 }
