@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * Created by wuxueyou on 2017/12/11.
  */
-@Component
+//@Component
 public class SelectLeader {
     private static String connectionString = "localhost:2181";
     private static String ID = "2";

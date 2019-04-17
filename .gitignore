@@ -2,3 +2,5 @@
 target/
 *.iml
 /cache-data/
+/src/main/webapp/my-project/dist/
+/src/main/webapp/my-project/node_modules/
